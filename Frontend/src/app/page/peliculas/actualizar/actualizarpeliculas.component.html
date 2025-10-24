@@ -1,0 +1,54 @@
+<main>
+  <section>
+    <div class="contenedor-registro">
+      <div class="titulo">
+        <h1>Actualizar Pelicula</h1>
+      </div>
+      <br>
+      <div class="formulario-registro">
+
+        <mat-form-field class="campos-registro-width">
+          <mat-label>Nombre</mat-label>
+          <input
+            matInput
+            placeholder="Ingrese Nombre"
+            type="text"
+            name="nombre"
+            [(ngModel)]="nombre"
+            #nombreInput="ngModel"
+            required />
+          <mat-icon matSuffix fontIcon="attribution"></mat-icon>
+          <mat-error *ngIf="nombreInput.invalid">Campo obligatorio</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="campos-registro-width">
+          <mat-label>Duracion</mat-label>
+          <input
+            matInput
+            placeholder="Ingrese Duracion"
+            type="number"
+            name="duracion"
+            [(ngModel)]="duracion"
+            #duracionInput="ngModel"
+            required
+            min="1" />
+          <mat-icon matSuffix fontIcon="category"></mat-icon>
+          <mat-error *ngIf="duracionInput.invalid">Campo obligatorio</mat-error>
+        </mat-form-field>
+
+        <br>
+        <br>
+
+        <div class="contenedor-btregistro">
+          <button
+            mat-flat-button
+            (click)="actualizarPelicula()"
+            [disabled]="nombreInput.invalid || duracionInput.invalid">
+            Actualizar
+            <mat-icon>app_registration</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

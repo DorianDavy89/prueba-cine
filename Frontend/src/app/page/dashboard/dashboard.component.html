@@ -1,0 +1,34 @@
+<main class="principal-tablero">
+  <mat-sidenav-container class="contenedor-tablero">
+    <mat-sidenav mode="side" opened class="menu-lateral">
+      <mat-nav-list>
+        <mat-list-item (click)="navegarpelicula()">Películas</mat-list-item>
+        <mat-list-item (click)="navegarsalas()">Salas de Cine</mat-list-item>
+        <mat-list-item routerLink="/asignar">Asignar Películas</mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="contenido-tablero">
+      <section class="seccion-tablero">
+        <h2>Dashboard</h2>
+
+        <div class="tarjetas-indicadores">
+          <mat-card class="tarjeta-indicador">
+            <mat-card-title>Total de Salas</mat-card-title>
+            <mat-card-content>{{ totalSalas }}</mat-card-content>
+          </mat-card>
+
+          <mat-card class="tarjeta-indicador">
+            <mat-card-title>Salas Disponibles</mat-card-title>
+            <mat-card-content>{{ salasDisponibles }}</mat-card-content>
+          </mat-card>
+
+          <mat-card class="tarjeta-indicador">
+            <mat-card-title>Total de Películas</mat-card-title>
+            <mat-card-content>{{ totalPeliculas }}</mat-card-content>
+          </mat-card>
+        </div>
+      </section>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</main>
